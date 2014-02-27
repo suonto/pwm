@@ -1,0 +1,20 @@
+[2014-02-27 16:22:10,391] INFO        Server: The server been initialized. 
+[2014-02-27 16:25:17,370] INFO        Server: We are requesting a demo session. 
+[2014-02-27 16:25:17,372] INFO        Server: We granted session demo_0. 
+[2014-02-27 16:25:17,373] DEBUG       Server: We have added demo_0 into auth_users. 
+[2014-02-27 16:25:17,373] DEBUG       Server: We have added demo_0 into timers. 
+[2014-02-27 16:25:56,833] DEBUG       Server: We have removed demo_0 from auth_users. 
+[2014-02-27 16:25:56,833] DEBUG       Server: We have removed demo_0 from timers. 
+[2014-02-27 16:25:56,833] INFO        Server: User demo_0 logged out. 
+[2014-02-27 16:25:56,835] DEBUG       Server: We have deleted demouser demo_0. 
+[2014-02-27 16:27:25,396] INFO        Server: We are registering suonto. 
+[2014-02-27 16:27:25,510] INFO        Server: Registration for suonto successful. 
+[2014-02-27 16:27:25,920] INFO        Server: We are authenticating user 'suonto': '11d1ec0d1ac3e336b1b0825be2125bcd44a38639bae9cfeced24506b6008b65234bdf10ad2d20a73e5b20d7d2aa5ea0c11242f94c14d7e4653e703fded013abf'... 
+[2014-02-27 16:27:25,922] DEBUG       Server: The credentials are: {'suonto': '11d1ec0d1ac3e336b1b0825be2125bcd44a38639bae9cfeced24506b6008b65234bdf10ad2d20a73e5b20d7d2aa5ea0c11242f94c14d7e4653e703fded013abf'} 
+[2014-02-27 16:27:25,922] DEBUG       Server: We have added suonto into auth_users. 
+[2014-02-27 16:27:25,922] DEBUG       Server: We have added suonto into timers. 
+[2014-02-27 16:27:25,922] DEBUG       Server: Authenticated users: {'suonto': 'Iz8zwDs2iORGvcmZZaVU9A3ketou4nWf5Q6/HYjju9v+X4z2iWet6klrawuEf7SFXp4='} 
+[2014-02-27 16:27:25,922] INFO        Server: suonto's authentication successful. 
+[2014-02-27 16:28:14,388] DEBUG       Server: We have removed suonto from auth_users. 
+[2014-02-27 16:28:14,389] DEBUG       Server: We have removed suonto from timers. 
+[2014-02-27 16:28:14,389] INFO        Server: User suonto logged out. 

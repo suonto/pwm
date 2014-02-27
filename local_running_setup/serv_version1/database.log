@@ -1,0 +1,50 @@
+[2014-02-27 16:22:10,391] INFO      Database: The database has been initialized. 
+[2014-02-27 16:25:18,497] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:18,498] INFO      Database: We have no passwords for demo_0 Returning {}. 
+[2014-02-27 16:25:18,498] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:28,303] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:28,338] DEBUG     Database: We are adding a new password kakkakala for user demo_0. 
+[2014-02-27 16:25:28,371] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:32,805] INFO      Database: We are trying to delete demo_0's password kakkakala. 
+[2014-02-27 16:25:32,806] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:32,842] INFO      Database: We are deleting user demo_0's password kakkakala 
+[2014-02-27 16:25:32,865] DEBUG     Database: We are deleting empty table demo_0. 
+[2014-02-27 16:25:32,865] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:37,292] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:37,333] DEBUG     Database: We are adding a new password kala for user demo_0. 
+[2014-02-27 16:25:37,369] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:49,428] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:49,429] DEBUG     Database: We are adding a new password nahka for user demo_0. 
+[2014-02-27 16:25:49,470] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:54,010] INFO      Database: We are trying to delete demo_0's password kala. 
+[2014-02-27 16:25:54,010] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:54,045] INFO      Database: We are deleting user demo_0's password kala 
+[2014-02-27 16:25:54,045] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:55,236] INFO      Database: We are trying to delete demo_0's password nahka. 
+[2014-02-27 16:25:55,237] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:55,274] INFO      Database: We are deleting user demo_0's password nahka 
+[2014-02-27 16:25:55,299] DEBUG     Database: We are deleting empty table demo_0. 
+[2014-02-27 16:25:55,299] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:56,833] INFO      Database: We are deleting user demo_0. 
+[2014-02-27 16:25:56,833] DEBUG     Database: We are opening connection to db demo_0. 
+[2014-02-27 16:25:56,834] DEBUG     Database: We are dropping table demo_0 if it exists. 
+[2014-02-27 16:25:56,834] DEBUG     Database: We are closing connection to db demo_0. 
+[2014-02-27 16:25:56,834] DEBUG     Database: We are opening connection to db CREDENTIALS. 
+[2014-02-27 16:25:56,834] INFO      Database: We don't have any registered users. Returning False. 
+[2014-02-27 16:27:25,396] DEBUG     Database: We are opening connection to db CREDENTIALS. 
+[2014-02-27 16:27:25,397] INFO      Database: We don't have any registered users. Returning {}. 
+[2014-02-27 16:27:25,397] DEBUG     Database: We are closing connection to db CREDENTIALS. 
+[2014-02-27 16:27:25,397] DEBUG     Database: We are opening connection to db CREDENTIALS. 
+[2014-02-27 16:27:25,510] INFO      Database: We have successfully registered suonto. 
+[2014-02-27 16:27:25,510] DEBUG     Database: We are closing connection to db CREDENTIALS. 
+[2014-02-27 16:27:25,920] DEBUG     Database: We are opening connection to db CREDENTIALS. 
+[2014-02-27 16:27:25,921] INFO      Database: We are reading credentials. 
+[2014-02-27 16:27:25,921] DEBUG     Database: Credentials: {'suonto': '11d1ec0d1ac3e336b1b0825be2125bcd44a38639bae9cfeced24506b6008b65234bdf10ad2d20a73e5b20d7d2aa5ea0c11242f94c14d7e4653e703fded013abf'} 
+[2014-02-27 16:27:25,921] DEBUG     Database: We are closing connection to db CREDENTIALS. 
+[2014-02-27 16:27:27,238] DEBUG     Database: We are opening connection to db suonto. 
+[2014-02-27 16:27:27,239] INFO      Database: We have no passwords for suonto Returning {}. 
+[2014-02-27 16:27:27,239] DEBUG     Database: We are closing connection to db suonto. 
+[2014-02-27 16:28:09,615] DEBUG     Database: We are opening connection to db suonto. 
+[2014-02-27 16:28:09,653] DEBUG     Database: We are adding a new password facebook for user suonto. 
+[2014-02-27 16:28:09,689] DEBUG     Database: We are closing connection to db suonto. 
+[2014-02-27 17:37:41,512] INFO      Database: The database has been initialized. 
