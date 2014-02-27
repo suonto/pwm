@@ -1,0 +1,13 @@
+This is the first release of the suonto.com password manager.
+
+The local version can be run by:
+cd local_running_setup/
+python serv_version1/http_server.py (in one process)
+python gui.py (in another one)
+
+I have an account "suonto" already registered into the system, but I will not tell you the password. So the situation is exactly like you were sitting in my computer. You can remove this account by removing the files "suonto", "suonto.pem", and "CREDENTIALS".
+
+You can get registration tokens from reg_tokens.txt file in case you need them.
+
+The other folder contains the setup exactly like I have it running on suonto.com.
+
