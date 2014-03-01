@@ -244,6 +244,6 @@ def print_tokens():
     for i in range(100):
         print rng.get_random_bytes(16).encode('hex')   
 
-#print_tokens()
+print_tokens()
     
     

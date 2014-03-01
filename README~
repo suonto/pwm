@@ -26,6 +26,8 @@ computer. The key file on your computer is encrypted using your master password,
 so in case somebody broke also into your computer, your security would depend on the password
 strength. 
 
+In case you find security flaws, please email me.
+
 MULTI ACCESS:
 In case you wish to access your passwords from multiple computers, you need to copy your
 .pem file into the other computer manually.
