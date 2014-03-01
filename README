@@ -1,7 +1,5 @@
 
-The version in folder "version1.1" is clean and in operation at suonto.com.
-Inside, there is two folders, one for local execution and another one that is the suonto.com
-password manager client.
+The version in folder "version1.1" is clean and in operation at suonto.com. Inside, there is two folders, one for local execution and another one that is the suonto.com password manager client.
 
 DEPENDENCIES:
 Twisted
@@ -20,15 +18,10 @@ python cside/gui.py
 
 
 ABOUT SECURITY:
-If somebody managed to break into the server and steal everything, they would not be able to
-decrypt your passwords. The passwords are encrypted by RSA public key, stored on your
-computer. The key file on your computer is encrypted using your master password, 
-so in case somebody broke also into your computer, your security would depend on the password
-strength. 
+If somebody managed to break into the server and steal everything, they would not be able to decrypt your passwords. The passwords are encrypted by RSA public key, stored on your computer. The key file on your computer is encrypted using your master password, so in case somebody broke also into your computer, your security would depend on the password strength. 
 
 MULTI ACCESS:
-In case you wish to access your passwords from multiple computers, you need to copy your
-.pem file into the other computer manually.
+In case you wish to access your passwords from multiple computers, you need to copy your .pem file into the other computer manually.
 
 ACCOUNTS:
 Demo accounts are available, if you want to have an account on suonto.com, email me.
