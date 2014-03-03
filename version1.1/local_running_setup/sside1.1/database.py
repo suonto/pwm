@@ -14,6 +14,7 @@ import os
 
 # Key for symmetric database encryption.
 # Symmetric encryption is not really even necessary.
+# DB_KEY = 'a3040e0afdb2a4f08d263e55f589f5e5c98fc7ea718c925fd8d8f9ec20bb5309'.decode('hex')
 DB_KEY = open("db_key").read().rstrip('\n').decode('hex')
 CREDENTIALS = "CREDENTIALS"
 UPDATED = "UPDATED"
@@ -73,12 +74,12 @@ class Database(object):
         cursor.execute("create table if not exists "+CREDENTIALS+" (username text, password text)")
         #Insert into credentials table if user was not already there.
         if not cursor.execute("select * from "+CREDENTIALS+" where username=?", (uname,)).fetchone():
-            cursor.execute("insert into "+CREDENTIALS+" values ('"+uname+"','"+password_hash_hex+"')")
+            cursor.execute("insert into "+CREDENTIALS+" values (?,?)", (uname, password_hash_hex,))
             conn.commit()
             added = True   
             self.__logger.info("We have successfully registered "+uname+".")
         else:
-            cursor.execute("update "+CREDENTIALS+" set password='"+password_hash_hex+"' where username=?", (uname,))
+            cursor.execute("update "+CREDENTIALS+" set password=? where username=?", (password_hash_hex, uname,))
             conn.commit()
             updated = True 
             self.__logger.info("We have updated "+uname+"'s password in credentials library.")
@@ -128,15 +129,15 @@ class Database(object):
         cursor = conn.cursor()
         added = False
         #Create the table for the user if it doesn't already exist.
-        cursor.execute("create table if not exists "+uname+" (id text, iv text, password text)")
+        cursor.execute("create table if not exists sites (id text, iv text, password text)")
         #Insert into db if identifier is not already there.
-        if not cursor.execute("select * from "+uname+" where id=?", (identifier.encode('hex'),)).fetchone():
+        if not cursor.execute("select * from sites where id=?", (identifier.encode('hex'),)).fetchone():
             #IV and ID encoded in hex for storage.
             self.__logger.debug("We are adding a new password "+identifier+" for user "+uname+".")
-            cursor.execute("insert into "+uname+" values ('"+identifier.encode('hex')+"','"+iv.encode('hex')+"','"+pwd+"')")
+            cursor.execute("insert into sites values (?,?,?)",(identifier.encode('hex'), iv.encode('hex'), pwd,))
         # Else update pwd value.
         else:
-            cursor.execute("update "+uname+" set iv='"+iv.encode('hex')+"' ,password='"+pwd+"' where id=?", (identifier.encode('hex'),))
+            cursor.execute("update sites set iv=? ,password=? where id=?", (iv.encode('hex'), pwd, identifier.encode('hex'),))
             self.__logger.debug("We have updated "+uname+"'s password "+identifier+".")
         conn.commit()
         added = True   
@@ -156,11 +157,11 @@ class Database(object):
     def __read_passwords(self, conn, uname):        
         self.__logger.info("We are reading passwords for "+uname+".")
         cursor = conn.cursor()
-        exists = cursor.execute("select name from sqlite_master where type='table' and name='"+uname+"'").fetchall()
+        exists = cursor.execute("select name from sqlite_master where type='table' and name='sites'").fetchall()
         if len(exists) == 0:
             self.__logger.info("We have no passwords for "+uname+" Returning {}.")
             return {} 
-        passwords = cursor.execute("select * from "+uname).fetchall()
+        passwords = cursor.execute("select * from sites").fetchall()
         self.__logger.info("Read for "+uname+" successful.")
         self.__logger.debug("Passwords:")
         result = {}
@@ -178,20 +179,20 @@ class Database(object):
         conn = self.__get_db_conn(uname)
         cursor= conn.cursor()
         removed = False
-        exists = cursor.execute("select name from sqlite_master where type='table' and name='"+uname+"'").fetchall()
+        exists = cursor.execute("select name from sqlite_master where type='table' and name='sites'").fetchall()
         if len(exists) == 0:
             self.__logger.info("We have no passwords for "+uname+". Returning False.")
             return False
-        if cursor.execute("select * from "+uname+" where id=?", (identifier.encode('hex'),)).fetchone():
-            cursor.execute("delete from "+uname+" where id=?", (identifier.encode('hex'),))
+        if cursor.execute("select * from sites where id=?", (identifier.encode('hex'),)).fetchone():
+            cursor.execute("delete from sites where id=?", (identifier.encode('hex'),))
             conn.commit()
             removed = True
             self.__logger.info("We are deleting user "+uname+"'s password "+identifier)
             #If table is empty after removal, it is dropped.
-            if not cursor.execute("select * from "+uname).fetchone():
-                cursor.execute("drop table "+uname)
+            if not cursor.execute("select * from sites").fetchone():
+                cursor.execute("drop table sites")
                 conn.commit()
-                self.__logger.debug("We are deleting empty table "+uname+".")
+                self.__logger.debug("We are deleting user "+uname+"'s empty table sites.")
         self.__close_db_conn(uname)
         return removed
 
@@ -199,8 +200,8 @@ class Database(object):
         self.__logger.info("We are deleting user "+uname+".")
         conn = self.__get_db_conn(uname)
         cursor= conn.cursor()
-        cursor.execute("drop table if exists "+uname)
-        self.__logger.debug("We are dropping table "+uname+" if it exists.")
+        cursor.execute("drop table if exists sites")
+        self.__logger.debug("We are dropping table sites if it exists.")
         conn.commit()
         try:
             os.remove(uname)
@@ -240,10 +241,22 @@ class Database(object):
         self.__demos[dname] = dpass
         return demo
  
-def print_tokens():
-    for i in range(100):
-        print rng.get_random_bytes(16).encode('hex')   
 
-#print_tokens()
+if __name__ == '__main__':
+    db = Database(debug=True)
+    #print rng.get_random_bytes(32).encode('hex')
+    #f = open("db_password")
+    #pwd = f.read()
+    #print [pwd.rstrip('\n').decode('hex')]
+    #db.add_password("suonto", "facebook", "kakkakala")
+    #db.read_passwords("suonto")
+    #db.delete_password("suonto", "facebook")
+    #db.store_user_credentials("suonto", "b86dda2ddb35f8bb836f84a17bf4f523f0d3501ddcddf656676b25cea7788ba8")
+    #db.get_user_credentials()
+    #db.delete_user(uname)
+
+
+
+        
     
     

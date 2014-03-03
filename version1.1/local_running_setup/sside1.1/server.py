@@ -209,7 +209,6 @@ class Server(object):
             return m.Message(m.T_ERR, {m.K_REASON:m.R_BLACKLIST}, "Welcome to blacklist.")
 
     def __exact_response(self, msg):
-        print "constructing response for:", msg.toJson()
         '''
         Sorts the requests to right handlers according to type.
         If the client has been tampered with, it is blacklisted.
@@ -334,10 +333,5 @@ class Server(object):
         else:
             return False 
        
-
-if __name__ == '__main__':
-    s = Server(debug=True)
-    response = s.authenticate("suonto", "suontos pwd hash")
-    print response.toJson()
     
     
