@@ -1,5 +1,5 @@
 
-The version in folder "version1.1" is clean and in operation at suonto.com. Inside, there is two folders, one for local execution and another one that is the suonto.com password manager client.
+The version in folder "version1.1" is clean and in operation at suonto.com. Inside, there are two folders, one for local execution and another one that is the suonto.com password manager client.
 
 DEPENDENCIES:
 Twisted
